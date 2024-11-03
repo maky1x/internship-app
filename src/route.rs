@@ -7,14 +7,13 @@ use axum::{
 
 use crate::{
     handler::{
-        create_blogpost_handler, blogpost_list_handler, test_route_check
+        create_blogpost_handler, blogpost_list_handler
     }, 
     AppState
 };
 
 pub fn create_router(app_state: Arc<AppState>) -> Router {
     Router::new()
-    .route("/api/test_route", get(test_route_check))
     .route("/api/blogposts", post(create_blogpost_handler))
     .route("/api/blogposts", get(blogpost_list_handler))
     .with_state(app_state)
