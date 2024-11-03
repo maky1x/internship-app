@@ -6,7 +6,9 @@ pub struct BlogpostModel {
     pub id: String,
     pub main: String,
     pub username: String,
-    pub created_at: Option<chrono::DateTime<chrono::Utc>>
+    pub created_at: Option<chrono::DateTime<chrono::Utc>>,
+    pub image: Option<String>,
+    pub avatar: Option<String>,
 }
 
 #[derive(Debug, Deserialize, Serialize)]
@@ -15,5 +17,7 @@ pub struct BlogpostModelResponse {
     pub id: String,
     pub main: String,
     pub username: String,
-    pub created_at: chrono::DateTime<chrono::Utc>
+    pub created_at: chrono::DateTime<chrono::Utc>,
+    pub image: String,
+    pub avatar: String,
 }
